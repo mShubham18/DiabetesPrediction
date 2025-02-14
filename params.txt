@@ -18,3 +18,5 @@
   'learning_rate': 0.3,
   'loss': 'log_loss',
   'n_estimators': 98}}
+
+  Pregnancies,Glucose,BloodPressure,SkinThickness,Insulin,BMI,DiabetesPedigreeFunction,Age

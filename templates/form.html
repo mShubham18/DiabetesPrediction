@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diabetes Prediction Model</title>
+</head>
+<body>
+    <div class="form">
+        <form action="/submit method="POST">
+            <label for="Pregnancies">Pregnancies: </label>
+            <input type="number" name="Pregnancies"><br>
+    
+            <label for="Glucose">Glucose: </label>
+            <input type="number" name="Glucose"><br>
+
+            <label for="BloodPressure">BloodPressure: </label>
+            <input type="number" name="BloodPressure"><br>
+    
+            <label for="SkinThickness">SkinThickness: </label>
+            <input type="number" name="SkinThickness"><br>
+
+            <label for="Insulin">Insulin: </label>
+            <input type="number" name="Insulin"><br>
+    
+            <label for="BMI">BMI: </label>
+            <input type="number" name="BMI"><br>
+
+            <label for="DiabetesPedigreeFunction">DiabetesPedigreeFunction: </label>
+            <input type="number" name="DiabetesPedigreeFunction"><br>
+    
+            <label for="Age">Age: </label>
+            <input type="number" name="Age"><br>
+            <input type="submit" value="Submit">
+        </form>
+    </div>
+    <div class="result">
+        <h3>Prediction</h3>
+        {%if prediction is not none%}
+            {%if prediction==0%}
+                <h3>Person is not Diabetic</h3>
+            {%elif prediction%}
+        {% endif %}
+    </div>
+</body>
+</html>
