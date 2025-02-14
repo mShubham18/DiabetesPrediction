@@ -4,10 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Diabetes Prediction Model</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
     <div class="form">
-        <form action="/submit method="POST">
+        <form action="/submit" method="POST">
             <label for="Pregnancies">Pregnancies: </label>
             <input type="number" name="Pregnancies"><br>
     
@@ -24,10 +25,10 @@
             <input type="number" name="Insulin"><br>
     
             <label for="BMI">BMI: </label>
-            <input type="number" name="BMI"><br>
+            <input type="number" name="BMI" step="any"><br>
 
             <label for="DiabetesPedigreeFunction">DiabetesPedigreeFunction: </label>
-            <input type="number" name="DiabetesPedigreeFunction"><br>
+            <input type="number" name="DiabetesPedigreeFunction" step="any"><br>
     
             <label for="Age">Age: </label>
             <input type="number" name="Age"><br>
@@ -38,8 +39,10 @@
         <h3>Prediction</h3>
         {%if prediction is not none%}
             {%if prediction==0%}
-                <h3>Person is not Diabetic</h3>
-            {%elif prediction%}
+                <h3 class="not-diabetic">Person is not Diabetic</h3>
+            {%elif prediction==1%}
+                <h3 class="diabetic">Person is Diabetic</h3>
+            {% endif %}
         {% endif %}
     </div>
 </body>
